@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>痕墨 - 个人主页</title>
+    <meta name="description" content="痕墨的个人主页，物联网工程专业大一学生，正在学习 Java、C 语言与 Linux">
+    
+    <!-- 防搜索引擎抓取与收录 -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            deepSea: '#02060D',
+                            card: '#081220',
+                            border: '#13233A',
+                            blue: '#1D4ED8',
+                            lightBlue: '#38BDF8',
+                            neonGreen: '#34D399',
+                            textMuted: '#6B7C96'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #02060D;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        .deep-ocean-bg {
+            background: radial-gradient(circle at 50% 15%, #08172E 0%, #02060D 75%);
+        }
+
+        .big-number {
+            font-size: 7rem;
+            font-weight: 900;
+            color: rgba(52, 211, 153, 0.03);
+            user-select: none;
+            line-height: 1;
+        }
+
+        @media (min-width: 768px) {
+            .big-number {
+                font-size: 11rem;
+            }
+        }
+
+        .glass-nav {
+            background: rgba(2, 6, 13, 0.88);
+            backdrop-filter: blur(16px);
+        }
+
+        #interactive-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        header, main, footer {
+            position: relative;
+            z-index: 10;
+        }
+
+        .experience-line {
+            position: relative;
+        }
+
+        .experience-line::before {
+            content: "";
+            position: absolute;
+            left: 7px;
+            top: 25px;
+            bottom: -25px;
+            width: 1px;
+            background: #13233A;
+        }
+
+        .experience-line:last-child::before {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-brand-neonGreen selection:text-black deep-ocean-bg">
+
+<!-- BACKGROUND -->
+<canvas id="interactive-canvas"></canvas>
+
+<!-- NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-brand-border/60">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between font-mono">
+        <a href="#" class="text-lg font-bold tracking-wider text-white flex items-center gap-2">
+            qwerty
+            <span class="text-xs text-brand-neonGreen font-normal">(痕墨)</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8 text-xs text-brand-textMuted">
+            <a href="#about" class="hover:text-white transition-colors">01 关于我</a>
+            <a href="#summer" class="hover:text-white transition-colors">02 暑期实践</a>
+            <a href="#learning" class="hover:text-white transition-colors">03 学习与工具</a>
+            <a href="#ideas" class="hover:text-white transition-colors">04 实践与灵感</a>
+            <a href="#contact" class="hover:text-white transition-colors">05 联系方式</a>
+        </nav>
+
+        <a href="#contact" class="px-3.5 py-1.5 text-xs font-semibold text-brand-neonGreen bg-brand-neonGreen/10 hover:bg-brand-neonGreen hover:text-black rounded transition-all border border-brand-neonGreen/30">
+            交个朋友
+        </a>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-28">
+
+    <!-- HERO -->
+    <section class="min-h-[50vh] flex flex-col justify-center relative border-b border-brand-border/40 pb-12">
+        <div class="space-y-6 max-w-2xl">
+            <div class="font-mono text-xs text-brand-neonGreen tracking-wider font-semibold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-brand-neonGreen animate-ping"></span>
+                <span>马鞍山学院</span>
+                <span>•</span>
+                <span>2026级 物联网工程</span>
+            </div>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                你好，我是：
+                <br class="block md:hidden">
+                <span class="text-emerald-400">qwerty</span>
+            </h1>
+
+            <div class="flex items-center gap-3">
+                <span class="text-xs px-2.5 py-1 bg-brand-card text-brand-neonGreen rounded font-mono border border-brand-neonGreen/30">
+                    ID: 痕墨
+                </span>
+                <span class="text-xs text-brand-textMuted font-mono">
+                    | 大一新生 / 物联网工程专业
+                </span>
+            </div>
+
+            <p class="text-sm md:text-base text-brand-textMuted leading-relaxed">
+                目前正在学习 Java、C 语言与 Linux。我更喜欢从基础开始，把一个想法慢慢做成真正能够运行的东西。也在尝试通过项目和实践，找到自己真正感兴趣的方向。
+            </p>
+
+            <div class="flex flex-wrap gap-4 font-mono text-xs pt-2">
+                <a href="#about" class="px-6 py-3 bg-brand-neonGreen text-black font-bold rounded hover:bg-emerald-400 transition-all shadow-lg shadow-brand-neonGreen/10">
+                    了解更多 ↓
+                </a>
+                <a href="#contact" class="px-6 py-3 bg-brand-card border border-brand-border text-white rounded hover:border-brand-neonGreen transition-all">
+                    联系方式
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="relative">
+        <div class="absolute -top-12 -left-4 big-number font-mono pointer-events-none">01</div>
+        <div class="relative z-10 space-y-6">
+            <div class="font-mono text-xs text-brand-neonGreen font-bold tracking-widest">ABOUT ME</div>
+            <h2 class="text-2xl md:text-4xl font-bold text-white">脚踏实地，用逻辑兑现想法</h2>
+            <p class="text-brand-textMuted text-sm max-w-2xl leading-relaxed">
+                进入物联网工程专业后，我希望先把基础真正学扎实。不急着追逐复杂概念，而是从编程、计算机基础和 Linux 等内容开始，一步一步建立自己的技术体系。
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-4 pt-4 text-sm font-mono">
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-2 backdrop-blur-sm hover:border-brand-neonGreen/50 transition-all">
+                    <div class="text-brand-neonGreen text-xs font-bold flex items-center justify-between">
+                        <span>STATUS_01</span>
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <div class="text-white font-bold text-base">情绪稳定</div>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">遇到问题先分析，再寻找解决办法。</p>
+                </div>
+
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-2 backdrop-blur-sm hover:border-brand-neonGreen/50 transition-all">
+                    <div class="text-brand-lightBlue text-xs font-bold flex items-center justify-between">
+                        <span>STATUS_02</span>
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <div class="text-white font-bold text-base">脚踏实地</div>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">更看重基础和实际结果，而不是堆砌概念。</p>
+                </div>
+
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-2 backdrop-blur-sm hover:border-brand-neonGreen/50 transition-all">
+                    <div class="text-purple-400 text-xs font-bold flex items-center justify-between">
+                        <span>STATUS_03</span>
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="text-white font-bold text-base">想法新颖</div>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">喜欢观察日常问题，再思考技术能不能解决它。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SUMMER EXPERIENCE -->
+    <section id="summer" class="relative">
+        <div class="absolute -top-12 -left-4 big-number font-mono pointer-events-none">02</div>
+        <div class="relative z-10 space-y-6">
+            <div class="font-mono text-xs text-brand-neonGreen font-bold tracking-widest">SUMMER EXPERIENCE</div>
+            <h2 class="text-2xl md:text-4xl font-bold text-white">暑期社会实践与经历</h2>
+            <p class="text-brand-textMuted text-xs max-w-2xl">高考结束后的暑假，我没有直接进入大学生活，而是选择先去工作，也参加了一些志愿服务。</p>
+
+            <div class="grid md:grid-cols-2 gap-6 pt-3">
+                <!-- JOB -->
+                <div class="p-6 bg-brand-card/80 border border-brand-border rounded-xl space-y-5 backdrop-blur-sm hover:border-brand-neonGreen/50 transition-all">
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-neonGreen font-mono text-xs font-bold">EXPERIENCE_01</span>
+                        <i class="fa-solid fa-briefcase text-brand-textMuted"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">暑期兼职工作</h3>
+                        <p class="text-xs text-brand-textMuted font-mono mt-1">餐饮服务 · 约一个半月</p>
+                    </div>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">
+                        主要负责点单、传菜、收台、清洁以及高峰期的现场协助。工作时间通常从下午持续到凌晨，需要长时间保持专注和执行。
+                    </p>
+                    <div class="grid grid-cols-3 gap-2 font-mono text-center pt-2">
+                        <div class="p-3 bg-black/30 rounded-lg border border-brand-border/40">
+                            <div class="text-brand-lightBlue font-bold">PASS</div>
+                            <div class="text-[10px] text-brand-textMuted">高压测试</div>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-lg border border-brand-border/40">
+                            <div class="text-white font-bold">TRUE</div>
+                            <div class="text-[10px] text-brand-textMuted">真实感知</div>
+                        </div>
+                        <div class="p-3 bg-black/30 rounded-lg border border-brand-border/40">
+                            <div class="text-brand-neonGreen font-bold">DONE</div>
+                            <div class="text-[10px] text-brand-textMuted">自主补贴</div>
+                        </div>
+                    </div>
+                    <div class="border-t border-brand-border/60 pt-4">
+                        <p class="text-xs text-brand-textMuted leading-relaxed">
+                            这段经历让我第一次真正感受到，赚钱需要付出时间和体力，也让我更加珍惜能够学习的时间。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- VOLUNTEER -->
+                <div class="p-6 bg-brand-card/80 border border-brand-border rounded-xl space-y-5 backdrop-blur-sm hover:border-brand-neonGreen/50 transition-all">
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-neonGreen font-mono text-xs font-bold">EXPERIENCE_02</span>
+                        <i class="fa-solid fa-hand-holding-heart text-brand-textMuted"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white">假期志愿服务</h3>
+                        <p class="text-xs text-brand-textMuted font-mono mt-1">志愿活动 · 社会实践</p>
+                    </div>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">
+                        参与假期志愿服务活动，协助现场秩序维护、信息登记以及相关事务处理，在实际活动中体验团队协作。
+                    </p>
+                    <div class="space-y-3 pt-2">
+                        <div class="experience-line flex gap-4">
+                            <div class="relative z-10 w-3 h-3 rounded-full bg-brand-neonGreen mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="text-white text-xs font-bold">现场协作</div>
+                                <div class="text-[11px] text-brand-textMuted mt-1">与其他志愿者配合完成现场工作。</div>
+                            </div>
+                        </div>
+                        <div class="experience-line flex gap-4">
+                            <div class="relative z-10 w-3 h-3 rounded-full bg-brand-lightBlue mt-1.5 shrink-0"></div>
+                            <div>
+                                <div class="text-white text-xs font-bold">沟通与执行</div>
+                                <div class="text-[11px] text-brand-textMuted mt-1">在具体任务中锻炼沟通和执行能力。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEARNING -->
+    <section id="learning" class="relative">
+        <div class="absolute -top-12 -left-4 big-number font-mono pointer-events-none">03</div>
+        <div class="relative z-10 space-y-6">
+            <div class="font-mono text-xs text-brand-neonGreen font-bold tracking-widest">LEARNING</div>
+            <h2 class="text-2xl md:text-4xl font-bold text-white">大一路线与编程环境</h2>
+            <p class="text-brand-textMuted text-xs max-w-2xl leading-relaxed">
+                当前以 Java 为主要自学方向，同时跟随学校学习 C 语言，逐步接触 Linux 和开发环境。
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-4 font-mono text-xs pt-2">
+                <!-- PROGRAMMING -->
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-4">
+                    <div class="text-white font-bold text-sm">
+                        <i class="fa-solid fa-code mr-2"></i>编程语言
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-brand-neonGreen">Java</span>
+                            <span class="text-[10px] text-brand-textMuted">基础学习中</span>
+                        </div>
+                        <div class="w-full h-1 bg-black/60 rounded-full overflow-hidden">
+                            <div class="h-full bg-brand-neonGreen rounded-full w-[25%]"></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="px-2.5 py-1 bg-black/60 text-white border border-brand-border rounded">C 语言 · 大一核心</span>
+                            <span class="px-2.5 py-1 bg-black/60 text-brand-lightBlue border border-brand-border rounded">Python · 后续自动化</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LINUX -->
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-4">
+                    <div class="text-white font-bold text-sm">
+                        <i class="fa-brands fa-linux mr-2"></i>Linux
+                    </div>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">
+                        从命令行、文件系统和 Shell 开始，逐步熟悉权限管理、开发环境配置和 Git。
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-black/60 text-brand-neonGreen border border-brand-neonGreen/30 rounded">Linux 基础</span>
+                        <span class="px-2.5 py-1 bg-black/60 text-white border border-brand-border rounded">Shell</span>
+                        <span class="px-2.5 py-1 bg-black/60 text-brand-lightBlue border border-brand-border rounded">Git / GitHub</span>
+                        <span class="px-2.5 py-1 bg-black/60 text-brand-textMuted border border-brand-border rounded">环境配置</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS / IDEAS -->
+    <section id="ideas" class="relative">
+        <div class="absolute -top-12 -left-4 big-number font-mono pointer-events-none">04</div>
+        <div class="relative z-10 space-y-6">
+            <div class="font-mono text-xs text-brand-neonGreen font-bold tracking-widest">PROJECTS & IDEAS</div>
+            <h2 class="text-2xl md:text-4xl font-bold text-white">实践与灵感探索</h2>
+
+            <div class="grid md:grid-cols-2 gap-4 pt-2">
+                <!-- PROJECT 01 -->
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-3">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-brand-neonGreen font-bold">实践 01</span>
+                        <span class="text-green-400 font-bold">代码练习</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">基础控制台逻辑小游戏</h3>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">
+                        使用 Java 等语言进行基础程序练习，通过分支、循环、方法等内容熟悉编程逻辑。
+                    </p>
+                </div>
+
+                <!-- PROJECT 02 -->
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-3">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-brand-neonGreen font-bold">实践 02</span>
+                        <span class="text-green-400 font-bold">架构设计中</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">校园信息公示与自动化聚合构想</h3>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">
+                        针对校园通知分散的问题，尝试设计一个自动整理、分类和提醒的信息聚合工具，后续逐步学习相关技术并尝试落地。
+                    </p>
+                </div>
+
+                <!-- PROJECT 03 -->
+                <div class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-3 md:col-span-2">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-brand-neonGreen font-bold">实践 03</span>
+                        <span class="text-purple-400 font-bold">效率工具</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">AI 辅助编程与学习流探索</h3>
+                    <p class="text-xs text-brand-textMuted leading-relaxed">
+                        使用 AI 辅助代码分析、逻辑纠错和概念理解，探索如何把大模型作为学习和开发过程中的辅助工具。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="relative">
+        <div class="absolute -top-12 -left-4 big-number font-mono pointer-events-none">05</div>
+        <div class="relative z-10 space-y-6">
+            <div class="font-mono text-xs text-brand-neonGreen font-bold tracking-widest">CONNECT</div>
+            <h2 class="text-2xl md:text-4xl font-bold text-white">联系方式</h2>
+            <p class="text-brand-textMuted text-xs">点击下方卡片可直接复制账号。</p>
+
+            <div class="grid md:grid-cols-3 gap-4 pt-2 font-mono">
+                <!-- WECHAT -->
+                <div onclick="copyText('id_henmo', '微信号')" class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-2 hover:border-brand-neonGreen transition-all cursor-pointer group">
+                    <div class="flex justify-between items-center text-[10px] text-brand-textMuted">
+                        <span>01 / WECHAT</span>
+                        <span class="group-hover:text-brand-neonGreen">
+                            <i class="fa-regular fa-copy"></i> 复制
+                        </span>
+                    </div>
+                    <div class="text-lg font-bold text-white">微信：宫泽羽生</div>
+                    <div class="text-xs text-brand-neonGreen">ID: id_henmo</div>
+                </div>
+
+                <!-- QQ -->
+                <div onclick="copyText('3074519931', 'QQ号')" class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-2 hover:border-brand-neonGreen transition-all cursor-pointer group">
+                    <div class="flex justify-between items-center text-[10px] text-brand-textMuted">
+                        <span>02 / QQ</span>
+                        <span class="group-hover:text-brand-neonGreen">
+                            <i class="fa-regular fa-copy"></i> 复制
+                        </span>
+                    </div>
+                    <div class="text-lg font-bold text-white">QQ：痕墨</div>
+                    <div class="text-xs text-brand-neonGreen">3074519931</div>
+                </div>
+
+                <!-- GMAIL (动态渲染+防爬虫) -->
+                <div onclick="copyEmail()" class="p-5 bg-brand-card/80 border border-brand-border rounded-xl space-y-2 hover:border-brand-neonGreen transition-all cursor-pointer group">
+                    <div class="flex justify-between items-center text-[10px] text-brand-textMuted">
+                        <span>03 / GMAIL</span>
+                        <span class="group-hover:text-brand-neonGreen">
+                            <i class="fa-regular fa-copy"></i> 复制
+                        </span>
+                    </div>
+                    <div class="text-lg font-bold text-white">谷歌邮箱</div>
+                    <div id="safe-email-display" class="text-xs text-brand-neonGreen truncate">点击复制邮箱</div>
+                </div>
+            </div>
+
+            <!-- GITHUB -->
+            <a href="https://github.com/henmoGT" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer" class="p-4 bg-black/50 border border-dashed border-brand-border rounded-xl font-mono text-xs flex justify-between items-center text-brand-textMuted hover:border-brand-neonGreen hover:text-white transition-all group">
+                <div class="flex items-center gap-3">
+                    <i class="fa-brands fa-github text-xl"></i>
+                    <div>
+                        <div class="text-white font-bold">GitHub / henmoGT</div>
+                        <div class="text-[10px] text-brand-textMuted">代码仓库 · 学习记录 · 项目实践</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 text-brand-neonGreen">
+                    <span>VISIT</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ENDING -->
+    <section id="beginning" class="relative border-t border-brand-border/40 pt-16">
+        <div class="relative z-10 text-center space-y-5 max-w-xl mx-auto">
+            <div class="font-mono text-xs text-brand-neonGreen font-bold tracking-widest">06 / NEW BEGINNING</div>
+            <h2 class="text-3xl font-extrabold text-white">星海横流，始于脚下</h2>
+            <p class="text-xs text-brand-textMuted leading-relaxed">
+                大学是新的起点。先把基础做好，再去寻找真正想做的事情。
+            </p>
+            <div class="pt-6">
+                <span class="text-[10px] font-mono text-brand-textMuted opacity-40">LIFE_LOG / COMING LATER</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-brand-border/40 py-8 bg-black/80 font-mono text-xs text-brand-textMuted">
+    <div class="max-w-5xl mx-auto px-6 flex justify-between items-center">
+        <div>qwerty • 个人主页</div>
+        <div class="flex items-center gap-2">
+            <span>© 2026</span>
+            <span class="text-brand-neonGreen font-bold">痕墨</span>
+        </div>
+    </div>
+</footer>
+
+<!-- COPY & SAFE SCRIPT -->
+<script>
+let fullEmail = "";
+
+// 页面加载完成后动态渲染邮箱（防爬虫扫描源码）
+window.addEventListener('DOMContentLoaded', () => {
+    const u = "henmogg";
+    const d = "gmail.com";
+    fullEmail = u + "@" + d;
+    const target = document.getElementById("safe-email-display");
+    if (target) {
+        target.innerText = fullEmail;
+    }
+});
+
+function copyText(text, label) {
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(function () {
+            alert(label + "已复制到剪贴板： " + text);
+        }).catch(function () {
+            alert("复制失败，请手动复制： " + text);
+        });
+    } else {
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+            document.execCommand("copy");
+            alert(label + "已复制到剪贴板： " + text);
+        } catch (error) {
+            alert("复制失败，请手动复制： " + text);
+        }
+        document.body.removeChild(textarea);
+    }
+}
+
+function copyEmail() {
+    if (fullEmail) {
+        copyText(fullEmail, '邮箱');
+    }
+}
+</script>
+
+<!-- CANVAS EFFECT SCRIPT -->
+<script>
+const canvas = document.getElementById("interactive-canvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+let mouseTrails = [];
+let bubbles = [];
+let particles = [];
+let lastTrailTime = 0;
+
+/* 创建气泡 */
+setInterval(function () {
+    if (bubbles.length < 15) {
+        bubbles.push({
+            x: Math.random() * canvas.width,
+            y: canvas.height + 20,
+            radius: Math.random() * 7 + 5,
+            speedY: Math.random() * 0.7 + 0.3,
+            alpha: Math.random() * 0.4 + 0.2
+        });
+    }
+}, 800);
+
+/* 鼠标水纹 */
+window.addEventListener("mousemove", function (e) {
+    const now = Date.now();
+    if (now - lastTrailTime > 60) {
+        mouseTrails.push({
+            x: e.clientX,
+            y: e.clientY,
+            radius: 10,
+            alpha: 0.12
+        });
+        lastTrailTime = now;
+    }
+});
+
+/* 点击气泡爆裂 */
+window.addEventListener("click", function (e) {
+    const clickX = e.clientX;
+    const clickY = e.clientY;
+
+    for (let i = bubbles.length - 1; i >= 0; i--) {
+        const b = bubbles[i];
+        const dx = b.x - clickX;
+        const dy = b.y - clickY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < b.radius + 20) {
+            for (let p = 0; p < 12; p++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = Math.random() * 4 + 2;
+                particles.push({
+                    x: b.x,
+                    y: b.y,
+                    vx: Math.cos(angle) * speed,
+                    vy: Math.sin(angle) * speed,
+                    radius: Math.random() * 2.5 + 1,
+                    alpha: 1
+                });
+            }
+            bubbles.splice(i, 1);
+            break;
+        }
+    }
+});
+
+/* Canvas 动画主循环 */
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    /* 鼠标轨迹 */
+    for (let i = mouseTrails.length - 1; i >= 0; i--) {
+        const t = mouseTrails[i];
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, t.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(56,189,248,${t.alpha})`;
+        ctx.fill();
+
+        t.radius += 0.3;
+        t.alpha -= 0.004;
+
+        if (t.alpha <= 0) {
+            mouseTrails.splice(i, 1);
+        }
+    }
+
+    /* 气泡 */
+    for (let i = bubbles.length - 1; i >= 0; i--) {
+        const b = bubbles[i];
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, b.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(52,211,153,${b.alpha})`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = "#34D399";
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        b.y -= b.speedY;
+
+        if (b.y < -20) {
+            bubbles.splice(i, 1);
+        }
+    }
+
+    /* 爆裂粒子 */
+    for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(52,211,153,${p.alpha})`;
+        ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+        p.alpha -= 0.08;
+
+        if (p.alpha <= 0) {
+            particles.splice(i, 1);
+        }
+    }
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
